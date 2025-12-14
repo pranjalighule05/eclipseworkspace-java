@@ -1,0 +1,74 @@
+package jdbc1;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+public class Employee {
+    public static void main(String[] args) {
+
+        Connection con = null;
+
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+           
+            con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/empdb",
+                    "pranjali",
+                    "pranjali123"
+            );
+
+            System.out.println("Connection Successful!");
+
+            Statement st = con.createStatement();
+
+           
+            ResultSet rs_all = st.executeQuery("SELECT * FROM employee_data");
+
+            System.out.println("\n---- ALL EMPLOYEES ----");
+            while (rs_all.next()) {
+                System.out.println(
+                        rs_all.getInt("id") + " | "
+                        + rs_all.getString("emp_name") + " | "
+                        + rs_all.getString("department") + " | "
+                        + rs_all.getString("city") + " | "
+                        + rs_all.getInt("salary") + " | "
+                        + rs_all.getInt("experience")
+                );
+            }
+
+            
+            ResultSet rs_pune = st.executeQuery(
+                    "SELECT emp_name FROM employee_data WHERE city='Pune'"
+            );
+
+            ArrayList<String> puneList = new ArrayList<>();
+            while (rs_pune.next()) {
+                puneList.add(rs_pune.getString("emp_name"));
+            }
+            System.out.println("\nEmployees from Pune: " + puneList);
+
+            
+            ResultSet rs_java = st.executeQuery(
+                    "SELECT emp_name FROM employee_data WHERE department='Java'"
+            );
+
+            ArrayList<String> javaList = new ArrayList<>();
+            while (rs_java.next()) {
+                javaList.add(rs_java.getString("emp_name"));
+            }
+            System.out.println("Employees in Java Department: " + javaList);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (con != null)
+                    con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+package queue;
+
+class Queue1 {
+	int front;
+	int rear;
+	int size=5;
+	int arr;
+	
+	void Enqueue() {
+		if ()
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

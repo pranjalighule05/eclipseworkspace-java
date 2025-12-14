@@ -1,0 +1,30 @@
+
+public class Node {
+int data;
+ next;
+
+ S1(int data) {
+	 data=d;
+     next=null;
+	}
+}
+class Singly_linked_list{
+	Node head;
+	
+	void add(int data) {
+		
+	}
+	
+	
+	
+	
+	
+	
+}
+	public static void main(String[] args) {
+		
+	
+
+	}
+
+}
