@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;driver.java&apos; to &apos;Calculator/src/tybcs&apos;&#x0A;- Original project: &apos;Calculator&apos;&#x0A;- Destination element: &apos;Calculator/src/tybcs&apos;&#x0A;- Original element: &apos;calculator.driver.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;tybcs" element1="/src&lt;calculator{driver.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1754562759113" units="1" version="1.0"/>
-</session>
