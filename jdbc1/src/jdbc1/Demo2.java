@@ -14,7 +14,7 @@ public class Demo2 {
 
           
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/empdb",   // database name changed
+                    "jdbc:mysql://localhost:3306/empdb",   // database name 
                     "pranjali",                            // your username
                     "pranjali123"                          // your password
             );
